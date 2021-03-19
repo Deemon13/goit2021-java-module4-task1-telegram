@@ -1,6 +1,5 @@
 public class Engine {
     private int power;
-    private String fuelType = "A500";
 
     public int getPower() {
         return power;
@@ -11,11 +10,21 @@ public class Engine {
     }
 
     public String getFuelType() {
-        return this.fuelType;
+        return "A500";
     }
 
     public static void main(String[] args) {
         Engine engine = new Engine();
-        System.out.println(engine.getFuelType());
+
+        System.out.println(engine.getFuelType()); //A500
+
+        Engine xFuelEngine = new XFuelEngine();
+        System.out.println(xFuelEngine.getFuelType()); //XFuel
+    }
+}
+
+class XFuelEngine extends Engine {
+    public String getFuelType() {
+        return "XFuel";
     }
 }

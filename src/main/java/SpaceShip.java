@@ -17,10 +17,14 @@ public class SpaceShip {
     }
 
     public void setSerialNumber(String serialNumber) {
-        if (serialNumber.contains("SN") && serialNumber.length() == 8) {
+        if (serialNumber.startsWith("SN") && serialNumber.length() == 8) {
             this.serialNumber = serialNumber;
         }
         return;
+    }
+
+    public void printInfo() {
+        System.out.println("Name is " + getName() +", serial number is " + getSerialNumber());
     }
 
     //Test output
@@ -41,5 +45,8 @@ public class SpaceShip {
         System.out.println(ship.getSerialNumber()); //Should be SN506788
         ship.setSerialNumber("EE123456");
         System.out.println(ship.getSerialNumber()); //Should be SN506788 - old value
+
+        //Name is Voyager, serial number is SN504030
+        ship.printInfo();
     }
 }

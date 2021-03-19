@@ -20,11 +20,28 @@ public class Engine {
 
         Engine xFuelEngine = new XFuelEngine();
         System.out.println(xFuelEngine.getFuelType()); //XFuel
+
+        AdvancedXFuelEngine advEngine = new AdvancedXFuelEngine();
+        advEngine.setPower(1000);
+        advEngine.setSerialNumber("SN504030");
+        advEngine.printInfo(); //Serial number is SN504030, power is 1000
     }
 }
 
 class XFuelEngine extends Engine {
+    protected String serialNumber;
+
+    public void setSerialNumber (String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
     public String getFuelType() {
         return "XFuel";
+    }
+}
+
+class AdvancedXFuelEngine extends XFuelEngine {
+    public void printInfo() {
+        System.out.println("Serial number is " + this.serialNumber +", power is " + getPower());
     }
 }

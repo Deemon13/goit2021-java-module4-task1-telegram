@@ -32,15 +32,36 @@ class Point extends PointTest {
         return z;
     }
 
-    public void setX (int x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public void setY (int y) {
+    public void setY(int y) {
         this.y = y;
     }
 
-    public void setZ (int z) {
+    public void setZ(int z) {
         this.z = z;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Point other = (Point) obj;
+        if (x != other.x) {
+            return false;
+        }
+        if (y != other.y) {
+            return false;
+        }
+        if (z != other.z) {
+            return false;
+        }
+        return true;
     }
 }

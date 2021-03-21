@@ -5,6 +5,16 @@ class Launcher {
     }
 }
 
-class Spaceport extends Launcher {
-    public void launch() {};
+class Spaceport {
+    private GasStation gasStation = new GasStation();
+
+    public void launch() {
+        gasStation.refuel();
+    };
+}
+
+class GasStation {
+    public void refuel() {
+        System.out.println("Refuel done!");
+    }
 }

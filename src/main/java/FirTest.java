@@ -20,6 +20,12 @@ class FirTest {
 
         //Should be 1
         System.out.println(new FirNumFactorial().calc(0));
+
+        //Should be 3
+        System.out.println(new FirNumMultiplyOdd().calc(4));
+
+        //Should be 15
+        System.out.println(new FirNumMultiplyOdd().calc(5));
     }
 }
 
@@ -50,5 +56,20 @@ class FirNumFactorial extends FirNum {
             numFactorial *= i;
         }
         return numFactorial;
+    }
+}
+
+class FirNumMultiplyOdd extends FirNum {
+
+    @Override
+    public int calc(int n) {
+        int numMultOdd = 1;
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                continue;
+            }
+            numMultOdd *= i;
+        }
+        return numMultOdd;
     }
 }

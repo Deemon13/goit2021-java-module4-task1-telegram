@@ -1,5 +1,5 @@
 class LaunchCalculator {
-    public int calculateTotalPrice(Spaceport spaceport, int passengerCount) {
+    public int calculateTotalPrice(SpaceportOld spaceport, int passengerCount) {
         return spaceport.calculateTotalPrice(passengerCount);
     }
 
@@ -17,23 +17,23 @@ class LaunchCalculator {
     }
 }
 
-abstract class Spaceport {
+abstract class SpaceportOld {
     public abstract int calculateTotalPrice(int passengerCount);
 }
 
-class JupiterStar extends Spaceport {
+class JupiterStar extends SpaceportOld {
     public int calculateTotalPrice(int passengerCount) {
         return 500 + 2 * passengerCount;
     };
 }
 
-class MercuryBeat extends Spaceport {
+class MercuryBeat extends SpaceportOld {
     public int calculateTotalPrice(int passengerCount) {
         return 15 * passengerCount;
     };
 }
 
-class SunHeaven extends Spaceport {
+class SunHeaven extends SpaceportOld {
     public int calculateTotalPrice(int passengerCount) {
         return 2000;
     };
